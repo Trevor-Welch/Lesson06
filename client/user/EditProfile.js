@@ -48,6 +48,7 @@ export default function EditProfile({ match }) {
   const [values, setValues] = useState({
       name: '',
       email: '',
+      about_me: '',
       password: '',
       seller: false,
       redirectToProfile: false,
@@ -64,7 +65,7 @@ export default function EditProfile({ match }) {
       if (data && data.error) {
         setValues({...values, error: data.error})
       } else {
-        setValues({...values, name: data.name, email: data.email, seller: data.seller})
+        setValues({...values, name: data.name, about_me: data.about_me, email: data.email, seller: data.seller})
       }
     })
     return function cleanup(){
@@ -77,6 +78,7 @@ export default function EditProfile({ match }) {
     const user = {
       name: values.name || undefined,
       email: values.email || undefined,
+      about_me: values.about_me || undefined,
       password: values.password || undefined,
       seller: values.seller || undefined
     }
@@ -112,6 +114,7 @@ export default function EditProfile({ match }) {
           </Typography>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
           <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal"/><br/>
+          <TextField id="about_me" label="About Me" className={classes.textField} value={values.about_me} onChange={handleChange('about_me')} margin="normal"/><br/>
           <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
           <Typography variant="subtitle1" className={classes.subheading}>
             Seller Account

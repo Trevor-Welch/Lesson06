@@ -13,13 +13,13 @@ import cart from './../cart/cart-helper'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#bef67a'}
+    return {color: '#64FFDA'}
   else
     return {color: '#ffffff'}
 }
 const isPartActive = (history, path) => {
   if (history.location.pathname.includes(path))
-    return {color: '#bef67a'}
+    return {color: '#64FFDA'}
   else
     return {color: '#ffffff'}
 }
